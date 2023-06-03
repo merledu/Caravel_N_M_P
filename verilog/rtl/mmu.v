@@ -34,14 +34,4 @@ module MMU (
             end
         end
     end
-
-    reg _write_vcd = 0;
-    initial
-    begin
-    $dumpfile("waveform.vcd");
-    $dumpvars(0, MMU, _write_vcd);
-    while(1) begin
-        #1; if (_write_vcd) $dumpflush;
-    end
-    end
 endmodule

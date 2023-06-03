@@ -176,14 +176,4 @@ module back_prop(
     assign mmu_req_o = mmu_req_o_int;
     assign derivative = derivative_int;
     assign gradient_in = gradient_in_int;
-
-    reg _write_vcd = 1;
-    initial
-    begin
-    $dumpfile("waveform.vcd");
-    $dumpvars(0, back_prop, _write_vcd);
-    while(1) begin
-        #1; if (_write_vcd) $dumpflush;
-    end
-    end
 endmodule

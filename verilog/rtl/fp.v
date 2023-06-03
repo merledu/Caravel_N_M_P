@@ -148,14 +148,4 @@ module forward_prop (
     assign activate_ctrl = activate_ctrl_int;
     assign done = done_signal;
 
-    reg _write_vcd = 1;
-    initial
-    begin
-    $dumpfile("waveform.vcd");
-    $dumpvars(0, forward_prop, _write_vcd);
-    while(1) begin
-        #1; if (_write_vcd) $dumpflush;
-    end
-    end
-
 endmodule
